@@ -2,10 +2,15 @@
   "name": "link-life",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@10.11.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "docker:frontend:build": "docker compose build frontend",
+    "docker:frontend:up": "docker compose up -d frontend",
+    "docker:frontend:down": "docker compose down",
+    "docker:frontend:logs": "docker compose logs -f frontend",
     "lint": "eslint",
     "prisma:generate": "prisma generate",
     "prisma:seed": "prisma db seed"

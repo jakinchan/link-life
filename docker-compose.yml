@@ -1,0 +1,17 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: link-life-frontend:latest
+    container_name: link-life-frontend
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      HOSTNAME: 0.0.0.0
+      NEXTAUTH_URL: http://localhost:3000
+      NEXTAUTH_SECRET: link-life-local-docker-secret
+      AUTH_SECRET: link-life-local-docker-secret
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
